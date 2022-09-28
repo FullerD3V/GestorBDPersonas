@@ -19,24 +19,24 @@
                   <Label layoutX="36.0" layoutY="65.0" text="Nombre" />
                   <Label layoutX="36.0" layoutY="190.0" text="Apellidos" />
                   <Label layoutX="36.0" layoutY="323.0" text="Edad" />
-                  <TextField layoutX="36.0" layoutY="95.0" />
-                  <TextField layoutX="32.0" layoutY="216.0" />
-                  <TextField layoutX="36.0" layoutY="350.0" />
-                  <Button layoutX="60.0" layoutY="420.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="132.0" text="Agregar persona" />
+                  <TextField fx:id="txtNombre" layoutX="36.0" layoutY="95.0" />
+                  <TextField fx:id="txtApellidos" layoutX="32.0" layoutY="216.0" />
+                  <TextField fx:id="txtEdad" layoutX="36.0" layoutY="350.0" />
+                  <Button fx:id="btnAgregar" layoutX="60.0" layoutY="420.0" mnemonicParsing="false" onAction="#btnAgregarOnAction" prefHeight="26.0" prefWidth="132.0" text="Agregar persona" />
                </children></Pane>
          </left>
          <center>
             <Pane prefHeight="483.0" prefWidth="535.0" BorderPane.alignment="CENTER">
                <children>
-                  <TableView layoutX="25.0" layoutY="59.0" prefHeight="346.0" prefWidth="474.0">
+                  <TableView fx:id="tblPersona" layoutX="25.0" layoutY="59.0" prefHeight="346.0" prefWidth="474.0">
                     <columns>
-                      <TableColumn prefWidth="159.0" text="Nombre" />
-                      <TableColumn prefWidth="148.0" text="Apellidos" />
-                        <TableColumn prefWidth="166.0" text="Edad" />
+                      <TableColumn fx:id="colNombre" prefWidth="159.0" text="Nombre" />
+                      <TableColumn fx:id="colApellidos" prefWidth="148.0" text="Apellidos" />
+                        <TableColumn fx:id="colEdad" prefWidth="166.0" text="Edad" />
                     </columns>
                   </TableView>
-                  <Button layoutX="54.0" layoutY="422.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="163.0" text="Modificar" />
-                  <Button layoutX="302.0" layoutY="422.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="163.0" text="Eliminar" />
+                  <Button fx:id="btnModificar" layoutX="54.0" layoutY="422.0" mnemonicParsing="false" onAction="#btnModificarOnAction" prefHeight="26.0" prefWidth="163.0" text="Modificar" />
+                  <Button fx:id="btnEliminar" layoutX="302.0" layoutY="422.0" mnemonicParsing="false" onAction="#btnEliminarOnAction" prefHeight="26.0" prefWidth="163.0" text="Eliminar" />
                </children></Pane>
          </center>
          <bottom>
