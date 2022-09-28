@@ -19,9 +19,9 @@
                   <Label layoutX="36.0" layoutY="65.0" text="Nombre" />
                   <Label layoutX="36.0" layoutY="190.0" text="Apellidos" />
                   <Label layoutX="36.0" layoutY="323.0" text="Edad" />
-                  <TextField fx:id="txtNombre" layoutX="36.0" layoutY="95.0" />
-                  <TextField fx:id="txtApellidos" layoutX="32.0" layoutY="216.0" />
-                  <TextField fx:id="txtEdad" layoutX="36.0" layoutY="350.0" />
+                  <TextField fx:id="txtNombre" layoutX="36.0" layoutY="95.0" onKeyReleased="#txtNombreKeyReleased" onKeyTyped="#txtNombreKeyTyped" />
+                  <TextField fx:id="txtApellidos" layoutX="32.0" layoutY="216.0" onKeyReleased="#txtApellidosKeyReleased" onKeyTyped="#txtNombreKeyTyped" />
+                  <TextField fx:id="txtEdad" layoutX="36.0" layoutY="350.0" onKeyReleased="#txtEdadKeyReleased" onKeyTyped="#txtEdadKeyTyped" />
                   <Button fx:id="btnAgregar" layoutX="60.0" layoutY="420.0" mnemonicParsing="false" onAction="#btnAgregarOnAction" prefHeight="26.0" prefWidth="132.0" text="Agregar persona" />
                </children></Pane>
          </left>
