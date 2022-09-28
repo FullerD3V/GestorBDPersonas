@@ -27,22 +27,28 @@ public class Persona {
         if (this == obj) {
             return true;
         }
+        
         if (obj == null) {
             return false;
         }
+        
         if (getClass() != obj.getClass()) {
             return false;
         }
+        
         final Persona other = (Persona) obj;
         if (this.Edad != other.Edad) {
             return false;
         }
+        
         if (!Objects.equals(this.Nombre, other.Nombre)) {
             return false;
         }
+        
         if (!Objects.equals(this.Apellidos, other.Apellidos)) {
             return false;
         }
+        
         return true;
     }
     
