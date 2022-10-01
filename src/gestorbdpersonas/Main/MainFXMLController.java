@@ -18,6 +18,8 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.KeyEvent;
 import gestorbdpersonas.Main.Persona;
+import javafx.scene.layout.Background;
+import javafx.scene.paint.Color;
 
 /**
  *
@@ -80,6 +82,11 @@ public class MainFXMLController implements Initializable {
     }
     
     @FXML
+    private void btnAgregarOnMouseDragOver(){
+        btnAgregar.setStyle("-fx-background-color: AQUAMARINE; -fx-border-color: BLUE");
+    }
+    
+    @FXML 
     private void btnModificarOnAction(){}
     
     @FXML
