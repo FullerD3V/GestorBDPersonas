@@ -5,6 +5,7 @@
  */
 package gestorbdpersonas.Main;
 
+import gestorbdpersonas.GestorBDPersonas;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
@@ -17,9 +18,18 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.KeyEvent;
-import gestorbdpersonas.Main.Persona;
+import gestorbdpersonas.Person.Persona;
+import java.io.IOException;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.layout.Background;
 import javafx.scene.paint.Color;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
+import gestorbdpersonas.Input.InputFXMLController;
 
 /**
  *
@@ -30,55 +40,26 @@ public class MainFXMLController implements Initializable {
     @FXML
     private Button btnAgregar, btnModificar, btnEliminar;
     
-    @FXML
-    private TextField txtNombre, txtEdad, txtApellidos;
-    
     @FXML 
     private TableView tblPersona;
     
     @FXML
     private TableColumn colNombre, colApellidos, colEdad;
     
-    String nombre, apellidos;
-    
-    int edad;
-    
-    private ObservableList<Persona> personas = FXCollections.observableArrayList();
+    @FXML
+    private void btnAgregarOnAction(ActionEvent event) throws IOException{
+        Parent root = FXMLLoader.load(gestorbdpersonas.GestorBDPersonas.class.getResource("Input/InputFXML.fxml"));
 
-    @FXML
-    private void txtNombreKeyReleased(KeyEvent event){
-        nombre = txtNombre.getText();
-    }
-    
-    @FXML
-    private void txtNombreKeyTyped(KeyEvent event){
-        if (!event.getCharacter().matches("[A-z]")) {
-            event.consume();
-        }
-    }
-    
-    @FXML
-    private void txtApellidosKeyReleased(KeyEvent event){
-        apellidos = txtApellidos.getText();
-    }
-    
-    @FXML
-    private void txtEdadKeyReleased(KeyEvent event){
-        edad = Integer.valueOf(txtEdad.getText());
-    }
-    
-    @FXML
-    public void txtEdadKeyTyped(KeyEvent event) {
-        if (!event.getCharacter().matches("[0-9]")) {
-            event.consume();
-        }
-    }
-    
-    @FXML
-    private void btnAgregarOnAction(){
-        Persona p = new Persona(nombre, apellidos, edad);
-        this.personas.add(p);
-        this.tblPersona.setItems(personas);
+        Stage stage = new Stage();
+        Scene scene = new Scene(root);
+        stage.setTitle("Nuevo usuario");
+        stage.setScene(scene);
+        stage.initModality(Modality.WINDOW_MODAL);        
+        stage.initOwner(((Node)event.getSource()).getScene().getWindow());
+        stage.setResizable(false);
+        stage.show();
+        
+        tblPersona.setItems(InputFXMLController.personas);
     }
     
     @FXML
@@ -87,10 +68,14 @@ public class MainFXMLController implements Initializable {
     }
     
     @FXML 
-    private void btnModificarOnAction(){}
+    private void btnModificarOnAction(){
+        //De momento nada
+    }
     
     @FXML
-    private void btnEliminarOnAction(){}
+    private void btnEliminarOnAction(){
+        //De momento nada
+    }
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
