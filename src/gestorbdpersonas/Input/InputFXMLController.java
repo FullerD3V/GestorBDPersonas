@@ -76,9 +76,7 @@ public class InputFXMLController implements Initializable {
     @FXML
     public void btnGuardarOnAction(){    
         Persona p = new Persona(nombre, apellidos, edad);
-        this.personas.add(p);
-
-        
+        this.personas.add(p);        
     }
 
     /**
