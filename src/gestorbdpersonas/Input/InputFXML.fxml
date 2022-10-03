@@ -7,8 +7,7 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.Pane?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="443.0" prefWidth="249.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="gestorbdpersonas.Input.InputFXMLController">
+<AnchorPane id="AnchorPane" prefHeight="443.0" prefWidth="249.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gestorbdpersonas.Input.InputFXMLController">
    <children>
       <BorderPane prefHeight="456.0" prefWidth="249.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <bottom>
@@ -28,6 +27,7 @@
                   <Label layoutX="39.0" layoutY="34.0" text="Nombre" />
                   <Label layoutX="42.0" layoutY="133.0" text="Apellidos" />
                   <Label layoutX="39.0" layoutY="222.0" text="Edad" />
+                  <Label fx:id="lblFeedback" layoutX="20.0" layoutY="293.0" text="Persona añadida correctamente" textFill="#46dd1c" visible="false" />
                </children>
             </Pane>
          </top>

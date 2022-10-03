@@ -16,6 +16,7 @@ import gestorbdpersonas.Person.Persona;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
 
@@ -31,6 +32,9 @@ public class InputFXMLController implements Initializable {
     
     @FXML
     private Button btnGuardar, btnSalir; 
+    
+    @FXML
+    private Label lblFeedback;
     
     String nombre, apellidos;
     
@@ -76,7 +80,8 @@ public class InputFXMLController implements Initializable {
     @FXML
     public void btnGuardarOnAction(){    
         Persona p = new Persona(nombre, apellidos, edad);
-        this.personas.add(p);        
+        this.personas.add(p);   
+        lblFeedback.setVisible(true);
     }
 
     /**
