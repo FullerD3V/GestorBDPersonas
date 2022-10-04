@@ -27,7 +27,6 @@
                   <Label layoutX="39.0" layoutY="34.0" text="Nombre" />
                   <Label layoutX="42.0" layoutY="133.0" text="Apellidos" />
                   <Label layoutX="39.0" layoutY="222.0" text="Edad" />
-                  <Label fx:id="lblFeedback" layoutX="20.0" layoutY="293.0" text="Persona añadida correctamente" textFill="#46dd1c" visible="false" />
                </children>
             </Pane>
          </top>

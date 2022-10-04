@@ -5,7 +5,6 @@
  */
 package gestorbdpersonas.Input;
 
-import gestorbdpersonas.Person.Persona;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
@@ -15,6 +14,8 @@ import javafx.scene.input.KeyEvent;
 import gestorbdpersonas.Person.Persona;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
@@ -32,9 +33,6 @@ public class InputFXMLController implements Initializable {
     
     @FXML
     private Button btnGuardar, btnSalir; 
-    
-    @FXML
-    private Label lblFeedback;
     
     String nombre, apellidos;
     
@@ -81,7 +79,14 @@ public class InputFXMLController implements Initializable {
     public void btnGuardarOnAction(){    
         Persona p = new Persona(nombre, apellidos, edad);
         this.personas.add(p);   
-        lblFeedback.setVisible(true);
+        
+        Alert alert = new Alert(AlertType.INFORMATION);
+        alert.setTitle("Datos insertados");
+        alert.setHeaderText("Persona añadida correctamente");
+        alert.showAndWait();
+        
+        Stage stage = (Stage) btnSalir.getScene().getWindow();
+        stage.close();
     }
 
     /**
