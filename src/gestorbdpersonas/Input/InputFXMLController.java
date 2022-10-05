@@ -78,15 +78,21 @@ public class InputFXMLController implements Initializable {
     @FXML
     public void btnGuardarOnAction(){    
         Persona p = new Persona(nombre, apellidos, edad);
-        this.personas.add(p);   
-        
-        Alert alert = new Alert(AlertType.INFORMATION);
+        if(!this.personas.contains(p)){
+            this.personas.add(p);  
+            Alert alert = new Alert(AlertType.INFORMATION);
         alert.setTitle("Datos insertados");
         alert.setHeaderText("Persona añadida correctamente");
         alert.showAndWait();
         
         Stage stage = (Stage) btnSalir.getScene().getWindow();
         stage.close();
+        } else {
+            System.out.println("Ya existe");
+        }
+         
+
+        
     }
 
     /**
